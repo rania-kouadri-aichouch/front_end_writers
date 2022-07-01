@@ -45,7 +45,7 @@ const BookDetails = () => {
                     </div>
                     <h1 className="text-gray-900 font-bold text-xl leading-8 my-1">{book.name}</h1>
                     <h3 className="text-gray-600 font-lg text-semibold leading-6">About how to get the book</h3>
-                    <p className="text-sm text-gray-500 hover:text-gray-600 leading-6">{currentuser}</p>
+                    <p className="text-sm text-gray-500 hover:text-gray-600 leading-6">about</p>
                     
                 </div>
                 
