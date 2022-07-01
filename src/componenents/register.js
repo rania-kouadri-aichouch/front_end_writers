@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Footer from "./footer";
+import Navbar from "./navbar";
 
 const Register = () => {
 
@@ -28,6 +30,9 @@ const Register = () => {
     })
   }
     return (
+     <div>
+
+     <Navbar/>
      <div className="bg-white py-10 px-5 mx-10 my-24 md:my-24 lg:my-24 md:px-20 md:mx-32  lg:mx-62 rounded-3xl drop-shadow-2xl">
         <div className="p-4">
           <h1 className="font-bold italic sm:text-xl md:text-2xl lg:text-3xl text-gray ">Registration</h1>
@@ -92,6 +97,10 @@ const Register = () => {
     </div>
     </div> 
   </div>
+  </div>
+
+  <Footer/>
+
   </div>
     );
 }

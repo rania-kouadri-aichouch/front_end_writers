@@ -12,6 +12,9 @@ import About from './componenents/about';
 import Register from './componenents/register';
 import Home from './componenents/home';
 import Books from './componenents/books';
+import BookDetails from './componenents/bookDetails';
+import AddBook from './componenents/addBook';
+import UpdateBook from './componenents/updateBook';
 
 
 function App() {
@@ -49,6 +52,18 @@ function App() {
             <Route exact path="/register">
               <Register/>
             </Route>
+
+            <Route exact path="/add/book">
+              <AddBook/>
+            </Route>
+
+            <Route  exact path="/book/details/:id" >
+                <BookDetails/>
+            </Route>    
+
+            <Route  exact path="/book/update/:id" >
+                <UpdateBook/>
+            </Route>                    
 
           </Switch>
  

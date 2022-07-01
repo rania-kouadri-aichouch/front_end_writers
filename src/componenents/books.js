@@ -1,8 +1,8 @@
 import useSWR, { mutate } from "swr";
 import { fetcher } from "../services/fetcher";
-import Footer from "./footer"
-import { Link, useHistory } from "react-router-dom";
+import Footer from "./footer";
 import Navbar from "./navbar";
+import { Link, useHistory } from "react-router-dom";
 
 const Books = () => {
 
@@ -39,16 +39,17 @@ const Books = () => {
                 name={book.name}                
                 price={book.price}
                 pages ={book.pages}
-
-                book={book}
+                book ={book}
                 className="m-10"  
                            
               >
  
               </BookItem>
               
+              
             )) 
             }
+            
            
         </div>
         </div>
@@ -62,7 +63,7 @@ const Books = () => {
 export default Books ;
 
 
-const BookItem = ({key ,book,name,price,pages}) => {
+const BookItem = ({key,name,price,pages,book}) => {
     const history = useHistory();
     return ( 
         <div className="py-5 " >
@@ -73,6 +74,7 @@ const BookItem = ({key ,book,name,price,pages}) => {
                          {name} 
                     </div>
                    <img src={require("../images/resized.jpeg")} />
+
                     <div className="grid grid-row-2 sm:gap-2 lg:grid-row-3 lg:gap-6">
                        
                        <div className="grid grid-row-4 gap-4 lg:grid-cols-3 lg:gap-30">
@@ -84,7 +86,19 @@ const BookItem = ({key ,book,name,price,pages}) => {
             
                       </div>
 
+                    {book  && (<button className="bg-gray-300" onClick={async (e) => {
+                         
+                         e.preventDefault();
+                         history.push(`/book/details/${book.id}`);
+
+                    }}>Book details </button>)}
+
+                    
+
+
                     </div>
+                    
+
                    
                </div> 
 
