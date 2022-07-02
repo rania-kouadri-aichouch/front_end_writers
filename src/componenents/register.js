@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault();
     const reg = { email,password,age,name,gender,role };
 
-    fetch('http://localhost:8080/api/auth/reg', {
+    fetch('https://writers-backend-app.herokuapp.com/api/auth/reg', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reg)

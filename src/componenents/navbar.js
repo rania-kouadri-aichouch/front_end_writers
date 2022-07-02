@@ -38,12 +38,11 @@ const Navbar = () => {
                     Books
                   </Link>
 
-                <Link to="/statistiques"><a
-                  href="#"
+                <Link to="/add/book"
                   className="text-gray-300  hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                      >
-                  Statistiques
-                </a></Link>
+                  Add book
+                </Link>
 
                 <Link
                     to="/register"
@@ -120,32 +119,46 @@ const Navbar = () => {
           {(ref) => (
             <div className="md:hidden" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3  space-y-1 sm:px-3">
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Home
-                </a>
+                </Link>
 
-                <a
-                  href="#"
+                <Link
+                  to="/about"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   About
-                </a>
+                </Link>
 
-                <a
-                  href="#"
+                <Link
+                  to="/books"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Books
-                </a>
+                </Link>
 
-                <Link to="/vendors"><a
-                  href="#"
+                <Link to="/add/book"><a
+                  to="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Statistiques
+                  Add book
+                </a></Link>
+
+                <Link to="/register"><a
+                  to="#"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Register
+                </a></Link>
+
+                <Link to="/login"><a
+                  to="#"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Login
                 </a></Link>
               </div>
             </div>

@@ -15,6 +15,8 @@ const BookDetails = () => {
     fetcher
     );
 
+
+
     const history = useHistory();
 
     const handleClick = () => {
@@ -22,9 +24,11 @@ const BookDetails = () => {
           fetch('https://writers-backend-app.herokuapp.com/api/books/'+ id, {
                method: 'DELETE'
                }).then(() => {
-                   history.push('/books');
+             history.push('/books');
     }) 
   }
+
+
  
     return ( 
  
@@ -39,8 +43,8 @@ const BookDetails = () => {
                 
                 <div className="bg-white p-3 border-t-4 border-gray-400">
                     <div className="image overflow-hidden">
-                        <img className="h-auto w-full mx-auto"
-                            src={book.image}
+                        <img className="h-72 w-full mx-auto"
+                            src= {require("../images/afterlife.jpg")} 
                             alt="" />
                     </div>
                     <h1 className="text-gray-900 font-bold text-xl leading-8 my-1">{book.name}</h1>
@@ -58,18 +62,17 @@ const BookDetails = () => {
 
                 <div className="bg-white p-3 shadow-sm rounded-sm">
                     <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-                        <span clas="text-gray-500">
-                            <svg className="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                        </span>
-                        <span className="tracking-wide">About</span>
+
+                        <h1 className="font-bold italic sm:text-xl md:text-2xl lg:text-3xl text-gray ">About the book !</h1>
                             
        
-                        
-                        <button onClick={handleClick} className="bg-red-500 px-5">delete</button>
+                        <button className="bg-blue-300 px-5 rounded-xl" onClick={async (e) => {
+
+                         history.push(`/book/update/${book._id}`);
+
+                        }}>update </button>
+
+                        <button onClick={handleClick} className="bg-red-500 px-5 rounded-xl">delete</button>
         
    
                     </div>
@@ -100,9 +103,19 @@ const BookDetails = () => {
 
                 
                 <div>
+                 
+                    
                 <div className="bg-white p-3 shadow-sm rounded-sm">
+                    <p className="  md:px-24  lg:px-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
 
-                </div>    
+                </div>  
+
+                <div className="bg-white p-3 shadow-sm rounded-sm">
+                    <p className="  md:px-24  lg:px-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+
+                </div> 
+
+  
                 </div>
                     
                 

@@ -70,6 +70,7 @@ const BookItem = ({key,name,price,pages,book}) => {
           
 
               <div key={key} class="box-border shadow-lg  h-auto w-auto mx-5 p-4 border-4 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:shadow-blue-500/50  duration-300">
+
                    <div className="text-gray-600 p-5 text-xl font-bold">
                          {name} 
                     </div>
@@ -86,12 +87,11 @@ const BookItem = ({key,name,price,pages,book}) => {
             
                       </div>
 
-                    {book  && (<button className="bg-gray-300" onClick={async (e) => {
-                         
-                         e.preventDefault();
-                         history.push(`/book/details/${book.id}`);
+                    <button className="bg-gray-300 rounded-xl p-2" onClick={async (e) => {
 
-                    }}>Book details </button>)}
+                         history.push(`/book/details/${book._id}`);
+
+                    }}>Book details </button>
 
                     
 

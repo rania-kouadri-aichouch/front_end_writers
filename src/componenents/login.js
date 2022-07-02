@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState ,useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Footer from "./footer";
 import Navbar from "./navbar";
+import { storeContext } from "./../global/store";
+import jwt from "jwt-decode";
+import { login, storeTheUser} from "./../services/auth";
 
 const Login = () => {
-
+  const { store, setStore } = useContext(storeContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
@@ -13,17 +16,31 @@ const Login = () => {
 
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const login = { email,password };
+    {
+                const log = { email,password };
 
-    fetch('https://writers-backend-app.herokuapp.com/api/auth/login', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(login)
-    }).then(() => {
-        history.push('/');
-       
-    })
+                const res = login(log);
+                
+                if (res && res.status === 200 && res.data) {
+                  console.log("done");
+                  const token = res.data.accessToken;
+                  const user = jwt(res.data.accessToken);
+                  setStore({
+                    ...store,
+                    token,
+                    user,
+                    isLogged: true,
+                  });
+                  storeTheUser(user, token);
+                  history.push('/books');
+                  
+                }  
+                
+                else {
+                  console.log(res, "try again");
+
+                }
+              }
   }
     return (
      <div>
