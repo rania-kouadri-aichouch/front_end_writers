@@ -9,6 +9,7 @@ const Writers = () => {
      const { data, error } = useSWR('https://writers-backend-app.herokuapp.com/api/profile', fetcher);
     return ( 
     <div className="sm:my-2 md:my-4  lg:my-4 sm:mx-10 md:mx-20  lg:mx-40">
+      <h1 className="font-bold my-10 sm:text-4xl md:text-4xl lg:text-5xl  " >Writers Community</h1>
       
     <Carousel
         showArrows={true}
@@ -59,20 +60,14 @@ const WriterItem = ({key,name,age,gender}) => {
 
         <div key={key}>
           <img src={require("../images/images.png")} className="carousel-image" />
-          <div className="myCarousel grid grid-row gap-4 px-72">
+          <div className="myCarousel grid grid-row gap-4 px-96 ">
             <h3>{name}</h3>
             <h3>{age} years</h3>
             <h3 className="font-bold">{gender} </h3>
             
         </div>
           
-        </div>
-
- 
-
-            
-
-          
+        </div>         
 
         </div>
      );

@@ -13,13 +13,13 @@ export function getTheTokenFromStorage() {
 
 
 
-export async function login(data) {
-  const formData = new FormData();
-  formData.append("email", data.email);
-  formData.append("password", data.password);
+export async function login(email,password) {
+  const user={email ,password}
+  
   const res = await fetch(`https://writers-backend-app.herokuapp.com/api/auth/login`, {
     method: "POST",
-    body: formData,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user)
   });
   const jsonData = await res.json();
   const status = await res.status;

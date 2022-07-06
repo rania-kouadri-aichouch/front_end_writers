@@ -15,6 +15,7 @@ import Books from './componenents/books';
 import BookDetails from './componenents/bookDetails';
 import AddBook from './componenents/addBook';
 import UpdateBook from './componenents/updateBook';
+import AboutUs from './componenents/aboutUs';
 
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
 
             <Route  exact path="/about" >
                 <About/>
+            </Route>
+
+            <Route  exact path="/aboutus" >
+                <AboutUs/>
             </Route>
 
             <Route exact path="/statistiques">

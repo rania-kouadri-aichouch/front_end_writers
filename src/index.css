@@ -36,7 +36,7 @@ code {
 .myCarousel {
   background: #fafafa;
   margin-top: -6%;
-  width: 54%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 6%;
@@ -108,7 +108,7 @@ code {
   background: #000 !important;
   height: 50px !important;
   position: absolute;
-  top: 35% !important;
+  top: 55% !important;
 }
 
 .App {

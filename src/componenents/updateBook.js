@@ -33,7 +33,7 @@ const UpdateBook = () => {
                      history.push('/books');
   })}
     return (
-     <div>
+     <div className="bg-gray-200">
 
       <Navbar/>
       {book && (
@@ -45,25 +45,25 @@ const UpdateBook = () => {
        <form  onSubmit={handleSubmit}>
       
 
-        <div className="flex flex-col py-4">
-          <label htmlFor="name"></label>
+        <div className="flex lg:flex-col-2 gap-4 py-4">
+          <label htmlFor="name">Name</label>
           <input type="text"  value={name} 
           onChange={(e) => setName(e.target.value)}
-          className="form-input px-3 py-2 rounded-md border-2 divide-slate-200" placeholder={book.name} required />
+          className="form-input px-3 py-2 rounded-md border-2 divide-slate-200 w-full" placeholder={book.name} required />
         </div>
 
-        <div className="flex flex-col py-4">
-          <label htmlFor="pages"></label>
+        <div className="flex lg:flex-col-4 gap-4 py-4">
+          <label htmlFor="pages">Pages </label>
           <input type="pages" value={pages} placeholder= {book.pages}
            onChange={(e) => setPages(e.target.value)}
-           className="form-input px-3 py-2 rounded-md border-2 divide-slate-200" required />
+           className="form-input px-3 py-2 rounded-md border-2 divide-slate-200 w-full" required />
         </div>
 
-         <div className="flex flex-col py-4">
-          <label htmlFor="price"></label>
+         <div className="flex lg:flex-col-2  gap-4 py-4">
+          <label htmlFor="price">Price</label>
           <input type="price"   value={price} placeholder={book.price}
            onChange={(e) => setPrice(e.target.value)}
-           className="form-input px-3 py-2 rounded-md border-2 divide-slate-200" required />
+           className="form-input px-3 py-2 rounded-md border-2 divide-slate-200 w-full" required />
         </div>
 
       <div className="flex justify-end py-4">
